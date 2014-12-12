@@ -1,0 +1,77 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+//sass --watch main.scss:main.css <--- Do this first!
+// ctrl-c to stop updating
+
+$primary-color: #ACB6BC;
+$font-stack: 'Roboto Slab', Helvetica;
+$font-color: #06192E;
+$border-color: #4EAE47;
+$name-color: #4EAE47;
+$width: 200;
+
+body {
+	background-color: $primary-color;
+	color: $font-color;
+	font-size: 25px;
+}
+
+h1 {
+	font-size: 75px;
+	color: $font-color;
+}
+
+h2 {
+	color: $name-color;	
+	text-decoration: underline;
+}
+
+h1, h2{
+	font-family: $font-stack;
+}
+
+h1, h2, p{
+	text-align: center;
+}
+
+img {
+	@if $width == 200 {
+		border: 10px ridge opacify($primary-color, 0.1);
+	}
+	$width: 200;
+	width: 200px;
+	height: 100px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+nav {
+	li {
+		text-align: center;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	a {
+		@extend h2;
+		position: absolute;
+		left: 40%;
+		right: 40%;
+		text-align: center;
+	}
+}
+
+@media (min-width: 700px) {
+	$width: 400;
+	img{
+		@if $width != 200 {
+			border: 5px ridge $border-color;
+		}
+		width: 400px;
+		height: 200px;
+	}
+}
+
+
+
+
+
+
